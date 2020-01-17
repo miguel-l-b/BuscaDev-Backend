@@ -17,5 +17,5 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
-app.listen(Port)
-console.log('Started | Port:'+Port)
+app.listen(process.env.PORT || Port)
+console.log('Started | Port:'+process.env.PORT || Port)
