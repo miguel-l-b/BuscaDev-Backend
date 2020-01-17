@@ -16,6 +16,9 @@ mongoose.connect('mongodb+srv://root:123@cluster0-2tzjk.mongodb.net/test?retryWr
 app.use(cors())
 app.use(express.json())
 app.use(routes)
+app.get('*', (req, res) => {
+    res.send('<h1>Api DevBusca</h1> <style>h1 { align-items: center;text-align: center; }</style>')
+})
 
 app.listen(process.env.PORT || Port)
 console.log('Started | Port:'+process.env.PORT || Port)
