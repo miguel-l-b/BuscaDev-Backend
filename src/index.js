@@ -17,8 +17,8 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 app.use('/img', express.static('img'))
-app.get('*', (req, res) => {
-    res.send('<h1>Api DevBusca</h1> <style>body{ display: flex;flex-direction: row;align-items: center; text-align: center; } h1 { text-size: 25px; }</style>')
+app.get('/', (req, res) => {
+    res.send('<h1>Api DevBusca</h1> <style>body{ display: flex;flex-direction: row;align-items: center; text-align: center; } h1 { text-align: center; text-size: 25px; }</style>')
 }) 
 
 app.listen(process.env.PORT || Port)
