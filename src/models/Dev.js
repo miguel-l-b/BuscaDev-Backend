@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const PointSchema = require('./utils/PointSchema')
+const mongoosePaginate = require('mongoose-paginate')
 
 const DevSchema = new mongoose.Schema({
     name: String,
@@ -12,5 +13,7 @@ const DevSchema = new mongoose.Schema({
         index: '2dsphere'
     }
 })
+
+DevSchema.plugin(mongoosePaginate)
 
 module.exports = mongoose.model('Dev', DevSchema)

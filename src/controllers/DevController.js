@@ -3,7 +3,8 @@ const Dev = require('../models/Dev')
 const parseStringAsArray = require('../utils/parseStringAsArray')
 module.exports = {
     async index(req, res) {
-        const devs = await Dev.find()
+        const { page = 1 } = req.query
+        const devs = await Dev.paginate({}, {page, limit: 4})
 
         return res.json(devs)
     },
